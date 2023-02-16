@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">APV2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Inicio</string>
+    <string name="profile">Yo</string>
+
+<!--    Titles Fragments-->
+    <string name="f_users">Usuarios</string>
+    <string name="f_pizzas">Especialidad</string>
+    <string name="f_bebidas">Bebidas</string>
+    <string name="f_adicional">Adicionales</string>
+    <string name="f_promocion">Promociones</string>
+
+    <!-- Fragment Pizzas Config-->
+    <string name="empty"> </string>
+    <string name="name_pizza_config">Nombre de Especialidad</string>
+    <string name="price_pizza_config">Precio</string>
+    <string name="description_pizza_config">Descripcion</string>
+    <string name="ingredient_pizza_config">Agregar nuevo ingrediente</string>
+
+</resources>
