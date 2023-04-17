@@ -21,7 +21,8 @@ class PizzasViewModel (): ViewModel(){
         return datosArray
     }
 
-    fun validationTIETBox(tilArray: ArrayList<TextInputEditText>) {
+    fun validationTIETBox(tilArray: ArrayList<TextInputEditText>): Boolean {
+        var bol:Boolean = true
 
         //validar si esta vacio
         try {
@@ -30,13 +31,15 @@ class PizzasViewModel (): ViewModel(){
                 var tie = tilArray.get(i)
                 if (tie.text!!.isEmpty()) {
                     tie.setError("Debes llenar el campo")
+                    bol = false
                 }
             }
         } catch (e: Exception) {
             println("Error Array datos" + e)
+            bol = false
 //            Toast.makeText(context, "Error: " + e, Toast.LENGTH_LONG).show()
         }
-
+        return bol
 
     }
 

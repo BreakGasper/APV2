@@ -1,13 +1,11 @@
 package com.breakapp.apv2.ui.configs.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.breakapp.apv2.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.breakapp.apv2.databinding.FragmentPizzasConfigBinding
 import com.breakapp.apv2.ui.configs.viewmodel.PizzasViewModel
 import com.google.android.material.textfield.TextInputEditText
@@ -52,37 +50,44 @@ class PizzasConfigFragment : Fragment() {
         b.ibAddPc.setOnClickListener({
             b.tvIngredientsPc.setText("" + vm_pizza.AddIngredient(b.tilIngredientPc.text.toString()))
         })
+        b.ivSavePizza.setOnClickListener({
+            GuardarDatos()
+        })
+        setupRecyclerView()
+
+    }
+
+    fun setupRecyclerView(){
+        b.rvListaPizzas.layoutManager = LinearLayoutManager(requireContext())
+//        b.rvListaPizzas.adapter = AdapterListConfig()
     }
 
 
-      fun validarVacios() {
+    fun validarVacios(): Boolean {
         //Add components to list
         list_EditText.add(b.tilNombrePc)
         list_EditText.add(b.tilPrecioPc)
         list_EditText.add(b.tilDescPc)
-        vm_pizza.validationTIETBox(list_EditText)
+        var bol = vm_pizza.validationTIETBox(list_EditText)
         list_EditText.clear()
+
+        return bol
     }
 
 
-    companion object{
-        fun GuardarDatos(context: Context) {
+    fun GuardarDatos() {
 
-            try {
-                val instance = PizzasConfigFragment()
-                instance.validarVacios()
-                Toast.makeText(context, "Guardado en Pizzas", Toast.LENGTH_SHORT).show()
+        try {
+           if (validarVacios()){
+               Toast.makeText(context, "Guardado en Pizzas", Toast.LENGTH_SHORT).show()
+           }
 
-            } catch (e: Exception) {
-                println("ErrorConfig: "+e)
-                Toast.makeText(context, "" + e, Toast.LENGTH_SHORT).show()
-            }
-
+        } catch (e: Exception) {
+            println("ErrorConfig: " + e)
+            Toast.makeText(context, "" + e, Toast.LENGTH_SHORT).show()
         }
 
     }
-
-
 
 
 }

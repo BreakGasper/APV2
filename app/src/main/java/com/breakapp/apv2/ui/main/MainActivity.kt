@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var b: ActivityMainBinding
     private lateinit var navController: NavController
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         b = ActivityMainBinding.inflate(layoutInflater)
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val id = item.itemId
 //        Toast.makeText(this, ""+id+"\n"+ Rb.id.setting_id,Toast.LENGTH_SHORT).show()
         if (id == R.id.setting_id) {
+
             val intent = Intent(this, ConfigActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.left_in, R.anim.left_out)

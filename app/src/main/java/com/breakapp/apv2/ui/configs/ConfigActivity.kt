@@ -1,5 +1,6 @@
 package com.breakapp.apv2.ui.configs
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -11,9 +12,12 @@ import com.breakapp.apv2.R
 import com.breakapp.apv2.databinding.ActivityConfigBinding
 import com.breakapp.apv2.ui.configs.adapters.ViewPagerAdapter
 import com.breakapp.apv2.ui.configs.fragments.*
+import com.google.android.material.internal.ContextUtils.getActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 
-class ConfigActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class ConfigActivity ( ) : AppCompatActivity(){
     private lateinit var b: ActivityConfigBinding
     private var viewPagerAdapter: ViewPagerAdapter? = null
 
@@ -30,9 +34,20 @@ class ConfigActivity : AppCompatActivity() {
             Log.d("CONFIGACTIVITY ",e.toString())
         }
 
-        setupViewPager2()
+
+         setupViewPager2()
+
+        b.fabConfig.setOnClickListener {
+            UsersFragment().showForm(this,true)
+        }
 
     }
+
+
+
+//    companion object {
+//        var visible : Boolean = false
+//    }
 
     private fun setupViewPager2() {
 
@@ -93,10 +108,7 @@ class ConfigActivity : AppCompatActivity() {
                     ToasTitle(getString(R.string.f_users))
                 }
                 1 -> {
-                    PizzasConfigFragment.GuardarDatos(this)
-
-//                    ToasTitle(getString(R.string.f_pizzas))
-
+                    ToasTitle(getString(R.string.f_pizzas))
                 }
                 2 -> {
                     ToasTitle(getString(R.string.f_bebidas))
@@ -116,5 +128,6 @@ class ConfigActivity : AppCompatActivity() {
     fun ToasTitle(title: String) {
         Toast.makeText(this, "Guardado en " + title, Toast.LENGTH_SHORT).show()
     }
+
 
 }

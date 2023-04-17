@@ -12,11 +12,24 @@
     <string name="f_adicional">Adicionales</string>
     <string name="f_promocion">Promociones</string>
 
+    <!--    Titles User-->
+    <string name="form_name">Nombre Completo</string>
+    <string name="form_phone">Celular</string>
+    <string name="form_pass">Contraseña</string>
+    <string name="form_tc">Aceptas terminos y condiciones de la app</string>
+    <string name="form_gen_h">Hombre</string>
+    <string name="form_gen_m">Mujer</string>
+    <string name="form_gen_o">Otro</string>
+    <string name="form_singin">Registrarme</string>
+
     <!-- Fragment Pizzas Config-->
     <string name="empty"> </string>
     <string name="name_pizza_config">Nombre de Especialidad</string>
     <string name="price_pizza_config">Precio</string>
     <string name="description_pizza_config">Descripcion</string>
     <string name="ingredient_pizza_config">Agregar nuevo ingrediente</string>
+    <string name="name_soda_config">Nombre de la bebida</string>
+    <string name="name_adi_config">Nombre del adicional</string>
+    <string name="name_pro_config">Nombre Promocion</string>
 
 </resources>

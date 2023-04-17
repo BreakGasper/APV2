@@ -11,17 +11,18 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:background="@color/color_primary_night"
-        >
+        android:background="@color/color_primary_day"
+        android:minHeight="?attr/actionBarSize">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/iv_save_pizza"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="right"
                 app:srcCompat="@android:drawable/ic_menu_save" />
 
@@ -47,7 +48,8 @@
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:contentDescription="TODO"
-                android:src="@drawable/svg_pizza" />
+                android:src="@drawable/svg_pizza"
+                android:visibility="invisible" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -61,7 +63,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_baseline_pizza_24"
-                    android:hint="@string/name_pizza_config" />
+                    android:hint="@string/name_pizza_config"
+                    android:inputType="textShortMessage" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,7 +79,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_baseline_attach_money_24"
-                    android:hint="@string/price_pizza_config" />
+                    android:hint="@string/price_pizza_config"
+                    android:inputType="text|phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -92,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_baseline_edit_note_24"
                     android:hint="@string/description_pizza_config"
+                    android:inputType="textShortMessage"
                     android:textColorHint="#616161" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,7 +126,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/ic_baseline_edit_note_24"
-                        android:hint="@string/ingredient_pizza_config" />
+                        android:hint="@string/ingredient_pizza_config"
+                        android:inputType="textShortMessage" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>

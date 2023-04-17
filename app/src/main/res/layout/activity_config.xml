@@ -6,10 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/app_name" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
@@ -21,23 +30,17 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/app_name"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fab_config"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="60dp"
         android:clickable="true"
         android:contentDescription="@string/app_name"
         app:backgroundTint="@color/color_primary_day"
-        app:srcCompat="@drawable/engranaje"
+        app:srcCompat="@android:drawable/ic_input_add"
         tools:ignore="ImageContrastCheck" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

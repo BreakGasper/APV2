@@ -1,4 +1,4 @@
-package com.breakapp.apv2.vo
+package com.breakapp.apv2.retrofit.vo
 
 import java.lang.Exception
 
